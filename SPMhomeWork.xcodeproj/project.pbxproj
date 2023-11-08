@@ -62,17 +62,65 @@
 		C54CAED52AFBDB870077C1CF /* SPMhomeWork */ = {
 			isa = PBXGroup;
 			children = (
-				C54CAED62AFBDB870077C1CF /* AppDelegate.swift */,
-				C54CAED82AFBDB870077C1CF /* SceneDelegate.swift */,
-				C54CAEED2AFBE8450077C1CF /* DataSource.swift */,
-				C54CAEEF2AFBEFF90077C1CF /* Model.swift */,
-				C54CAEDA2AFBDB870077C1CF /* MainViewController.swift */,
-				C54CAEDC2AFBDB870077C1CF /* Main.storyboard */,
-				C54CAEDF2AFBDB880077C1CF /* Assets.xcassets */,
-				C54CAEE12AFBDB880077C1CF /* LaunchScreen.storyboard */,
-				C54CAEE42AFBDB880077C1CF /* Info.plist */,
+				C54CAEF52AFC13940077C1CF /* SupportingFiles */,
+				C54CAEF42AFC13730077C1CF /* DataStore */,
+				C54CAEF32AFC13660077C1CF /* Models */,
+				C54CAEF22AFC13510077C1CF /* ViewControllers */,
+				C54CAEF12AFC13430077C1CF /* Storyboards */,
+				C54CAEF62AFC13A20077C1CF /* Resources */,
 			);
 			path = SPMhomeWork;
+			sourceTree = "<group>";
+		};
+		C54CAEF12AFC13430077C1CF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C54CAEDC2AFBDB870077C1CF /* Main.storyboard */,
+				C54CAEE12AFBDB880077C1CF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C54CAEF22AFC13510077C1CF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C54CAEDA2AFBDB870077C1CF /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C54CAEF32AFC13660077C1CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C54CAEEF2AFBEFF90077C1CF /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C54CAEF42AFC13730077C1CF /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				C54CAEED2AFBE8450077C1CF /* DataSource.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		C54CAEF52AFC13940077C1CF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C54CAED62AFBDB870077C1CF /* AppDelegate.swift */,
+				C54CAED82AFBDB870077C1CF /* SceneDelegate.swift */,
+				C54CAEE42AFBDB880077C1CF /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C54CAEF62AFC13A20077C1CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C54CAEDF2AFBDB880077C1CF /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +358,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88PMY4A464;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SPMhomeWork/Info.plist;
+				INFOPLIST_FILE = SPMhomeWork/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -341,7 +389,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88PMY4A464;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SPMhomeWork/Info.plist;
+				INFOPLIST_FILE = SPMhomeWork/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

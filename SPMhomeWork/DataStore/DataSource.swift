@@ -71,5 +71,5 @@ final class DataSource {
         "easeOutBack",
         "easeInOutBack"
     ]
-    private init(){}
+    private init() {}
 }

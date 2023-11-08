@@ -12,12 +12,13 @@ struct Model {
     let curve: String
     let force: Double
     let duration: Double
+    let buttonlabel: String
     
     static func getModel() -> [Model] {
         var models: [Model] = []
         let dataSource = DataSource.shared
         
-        let animations = dataSource.animationList.shuffled()
+        let animations = dataSource.animationList
         let curves = dataSource.curves.shuffled()
         
         let iterationCount = min(
@@ -30,7 +31,8 @@ struct Model {
                 animation: animations[index],
                 curve: curves[index],
                 force: getForceAndDuration().0,
-                duration: getForceAndDuration().1
+                duration: getForceAndDuration().1,
+                buttonlabel: animations[index]
             )
             models.append(model)
         }

@@ -9,24 +9,29 @@ import UIKit
 import SpringAnimation
 
 final class MainViewController: UIViewController {
-    @IBOutlet weak var greenView: SpringView!
-    @IBOutlet weak var runButtonLabel: SpringLabel!
-    @IBOutlet weak var descriptionTV: SpringTextView!
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var greenView: SpringView!
+    @IBOutlet weak var descriptionTV: SpringTextView!
+    @IBOutlet weak var runButtonLabel: SpringButton!
+    
+    // MARK: - Private properties
     private let models = Model.getModel()
     
+    // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStartView()
     }
     
+    // MARK: - IBACtions
     @IBAction private func runAnimationButton(_ sender: SpringButton) {
         setupAnimations()
         setupStartView()
-    }
-    
-}
 
+    }
+}
+// MARK: - Extension MainVC
 extension MainViewController {
     private func setupStartView() {
         greenView.layer.cornerRadius = 15
