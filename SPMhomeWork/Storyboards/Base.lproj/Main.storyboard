@@ -41,7 +41,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="runAnimationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oiF-QF-OJR"/>
+                                    <action selector="runAnimationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QEo-dI-qvh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,7 +63,7 @@
                     <connections>
                         <outlet property="descriptionTV" destination="uAW-dF-uL3" id="K4m-BS-LF5"/>
                         <outlet property="greenView" destination="96E-0A-9q4" id="XPf-vd-Shf"/>
-                        <outlet property="runButtonLabel" destination="dvP-Il-l2s" id="6Dp-kV-I0t"/>
+                        <outlet property="runButtonLabel" destination="dvP-Il-l2s" id="H73-6p-t0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

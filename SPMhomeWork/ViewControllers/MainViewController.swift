@@ -17,18 +17,18 @@ final class MainViewController: UIViewController {
     
     // MARK: - Private properties
     private let models = Model.getModel()
-    
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStartView()
     }
-    
+    override func viewWillLayoutSubviews() {
+        runButtonLabel.titleLabel?.text = "Run \(models[getIndex()].buttonlabel)"
+    }
     // MARK: - IBACtions
-    @IBAction private func runAnimationButton(_ sender: SpringButton) {
-        setupAnimations()
-        setupStartView()
-
+    @IBAction func runAnimationButton(_ sender: SpringButton) {
+            setupAnimations()
+            setupStartView()
     }
 }
 // MARK: - Extension MainVC
@@ -59,3 +59,8 @@ delay: 1.00\n
         greenView.animate()
     }
 }
+
+/* меня так и не хватило времени разобраться почему кнопка нажимается несколько раз((((,
+ а когда я сдавал , то прочитал ,что нужно было поменять на название следующей анимации(((((
+ еще больше расстроился и теперь сдаю как есть
+*/
