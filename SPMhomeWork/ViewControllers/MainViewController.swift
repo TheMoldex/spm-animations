@@ -17,30 +17,32 @@ final class MainViewController: UIViewController {
     
     // MARK: - Private properties
     private let models = Model.getModel()
+    
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupStartView()
+        setupStartView(index: getIndex())
     }
     override func viewWillLayoutSubviews() {
         runButtonLabel.titleLabel?.text = "Run \(models[getIndex()].buttonlabel)"
     }
     // MARK: - IBACtions
     @IBAction func runAnimationButton(_ sender: SpringButton) {
-            setupAnimations()
-            setupStartView()
+            let index = getIndex()
+            setupAnimations(index: index)
+            setupStartView(index: index)
     }
 }
 // MARK: - Extension MainVC
 extension MainViewController {
-    private func setupStartView() {
+    private func setupStartView(index: Int) {
         greenView.layer.cornerRadius = 15
         runButtonLabel.layer.cornerRadius = 15
         descriptionTV.text = """
-preset: \(models[getIndex()].animation)\n
-curve: \(models[getIndex()].curve)\n
-force: \(models[getIndex()].force)\n
-duration: \(models[getIndex()].duration)\n
+preset: \(models[index].animation)\n
+curve: \(models[index].curve)\n
+force: \(models[index].force)\n
+duration: \(models[index].duration)\n
 delay: 1.00\n
 """
         descriptionTV.isEditable = false
@@ -51,16 +53,17 @@ delay: 1.00\n
         return index
     }
     
-    private func setupAnimations() {
-        greenView.animation = models[getIndex()].animation
-        greenView.curve = models[getIndex()].curve
-        greenView.force = models[getIndex()].force
-        greenView.duration = models[getIndex()].duration
+    private func setupAnimations(index: Int) {
+        greenView.animation = models[index].animation
+        greenView.curve = models[index].curve
+        greenView.force = models[index].force
+        greenView.duration = models[index].duration
         greenView.animate()
+
     }
 }
 
-/* меня так и не хватило времени разобраться почему кнопка нажимается несколько раз((((,
+/* меня так и не хватило времени разобраться почему title на кнопке меняется несколько раз((((,
  а когда я сдавал , то прочитал ,что нужно было поменять на название следующей анимации(((((
  еще больше расстроился и теперь сдаю как есть
 */
