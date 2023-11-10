@@ -16,7 +16,7 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var runButtonLabel: SpringButton!
     
     // MARK: - Private properties
-    private let models = Model.getModel()
+    private var animations = Animation.getModel()
     
     // MARK: - Overrides
     override func viewDidLoad() {
@@ -24,13 +24,14 @@ final class MainViewController: UIViewController {
         setupStartView(index: getIndex())
     }
     override func viewWillLayoutSubviews() {
-        runButtonLabel.titleLabel?.text = "Run \(models[getIndex()].buttonlabel)"
+        runButtonLabel.titleLabel?.text = "Run \(animations[getIndex()].animation)"
     }
     // MARK: - IBACtions
     @IBAction func runAnimationButton(_ sender: SpringButton) {
             let index = getIndex()
-            setupAnimations(index: index)
-            setupStartView(index: index)
+        setupStartView(index: index)
+        setupAnimations(index: index)
+        sender.titleLabel?.text = animations[getIndex()].animation
     }
 }
 // MARK: - Extension MainVC
@@ -39,27 +40,27 @@ extension MainViewController {
         greenView.layer.cornerRadius = 15
         runButtonLabel.layer.cornerRadius = 15
         descriptionTV.text = """
-preset: \(models[index].animation)\n
-curve: \(models[index].curve)\n
-force: \(models[index].force)\n
-duration: \(models[index].duration)\n
-delay: 1.00\n
+preset: \(animations[index].animation)\n
+curve: \(animations[index].curve)\n
+force: \(animations[index].force)\n
+duration: \(animations[index].duration)\n
+delay: \(animations[index].delay)\n
 """
         descriptionTV.isEditable = false
     }
     
     private func getIndex() -> Int {
-        let index = Int.random(in: 0..<models.count)
+        let index = Int.random(in: 0..<animations.count)
         return index
     }
     
     private func setupAnimations(index: Int) {
-        greenView.animation = models[index].animation
-        greenView.curve = models[index].curve
-        greenView.force = models[index].force
-        greenView.duration = models[index].duration
-        greenView.animate()
-
+        greenView.animation = animations[index].animation
+                greenView.curve = animations[index].curve
+                greenView.force = animations[index].force
+                greenView.duration = animations[index].duration
+                greenView.animate()
+                animations = Animation.getModel()
     }
 }
 

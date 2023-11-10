@@ -7,32 +7,42 @@
 
 import Foundation
 
-struct Model {
+struct Animation {
     let animation: String
     let curve: String
     let force: Double
     let duration: Double
-    let buttonlabel: String
+    let delay: Double
     
-    static func getModel() -> [Model] {
-        var models: [Model] = []
+    var description: String {
+        """
+preset: \(animation)\n
+curve: \(curve)\n
+force: \(force)\n
+duration: \(duration)\n
+delay: \(delay)\n
+"""
+    }
+    
+    static func getModel() -> [Animation] {
+        var models: [Animation] = []
         let dataSource = DataSource.shared
         
-        let animations = dataSource.animationList
-        let curves = dataSource.curves.shuffled()
+        let animations = dataSource.animationList.randomElement()?.rawValue ?? "pop"
+        let curves = dataSource.curves.randomElement()?.rawValue ?? "pop"
         
         let iterationCount = min(
             animations.count,
             curves.count
         )
         
-        for index in 0..<iterationCount {
-            let model = Model(
-                animation: animations[index],
-                curve: curves[index],
+        for _ in 0..<iterationCount {
+            let model = Animation(
+                animation: animations,
+                curve: curves,
                 force: getForceAndDuration().0,
                 duration: getForceAndDuration().1,
-                buttonlabel: animations[index]
+                delay: 1
             )
             models.append(model)
         }
